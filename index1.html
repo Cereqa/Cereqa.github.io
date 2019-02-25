@@ -3,14 +3,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
 </head>
 <body>
-<form method="POST">
-<input type="text" name="ip">
-<input type="submit" value="Отправить">
-</form>
 <?php 
 if (isset($_POST['ip']))
 $url = 'http://deival909.ru/inLineKitStudio/syncModule.php?Act=createNewUser&BDLink=gHoRz78YjU&Password=12345c&Login='.$_POST['ip']'&Days=&Comment=Good';
 echo $url;
 ?>
+  <form method="GET">
+<input type="text" name="ip">
+<input type="submit" value="Отправить">
+</form>
+
 </body>
 </html>
