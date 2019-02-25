@@ -10,7 +10,7 @@
 
 
 <?php
-$url = 'http://deival909.ru/inLineKitStudio/syncModule.php?Act=createNewUser&BDLink=gHoRz78YjU&Password=12345c&Login='.$_POST['ip']'&Days=&Comment=Good';
+$url = 'http://deival909.ru/inLineKitStudio/syncModule.php?Act=createNewUser&BDLink=gHoRz78YjU&Password=12345c&Login='.$_POST['ip']'&Days=&Comment=Good'';
 $result = file_get_contents($url, false, stream_context_create(array(
     'http' => array(
         'method'  => 'GET',
