@@ -2,7 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
 </head>
-<body>
 <form method="POST">
 <input type="text" name="ip">
 <input type="submit" value="Отправить">
@@ -10,8 +9,5 @@
   
 <?php 
 $str = 'http://ipgeobase.ru:7020/geo?ip='.$_POST['ip'];
-$content = file_get_contents($str);
-echo 'Region: '.$region.'<br>';
 ?>
-</body>
 </html>
