@@ -1,1 +1,28 @@
-<head><meta http-equiv="refresh" content="0; url=https://moikrug.ru/companies/maximatelecom"></head>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+</head>
+<body>
+<form method="POST">
+<input type="text" name="ip">
+<input type="submit" value="Отправить">
+</form>
+<?php 
+if (isset($_POST['ip']))
+{
+$str = 'http://ipgeobase.ru:7020/geo?ip='.$_POST['ip'];
+$content = file_get_contents($str);
+preg_match_all('#<country>(.*)(</country>)#Usi', $content, $matches); 
+$country = $matches[0][0];
+preg_match_all('#<city>(.*)(</city>)#Usi', $content, $matches); 
+$city = $matches[0][0];
+preg_match_all('#<region>(.*)(</region>)#Usi', $content, $matches); 
+$region = $matches[0][0];
+echo 'Country: '.$country.'<br>';
+echo 'City: '.$city.'<br>';
+echo 'Region: '.$region.'<br>';
+unset($_POST['ip']);
+}
+?>
+</body>
+</html>
